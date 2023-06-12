@@ -6,14 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jscompany.tp16todolistapp.R
+import com.jscompany.tp16todolistapp.databinding.FragmentProceedingBinding
 
 class ProceedingFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
+    lateinit var binding: FragmentProceedingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
