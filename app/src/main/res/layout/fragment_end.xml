@@ -3,6 +3,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.jscompany.tp16todolistapp.viewmodel.TodoViewModel" />
+
     </data>
 
     <LinearLayout
@@ -11,6 +15,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="16dp"
         tools:context=".view.EndFragment">
 

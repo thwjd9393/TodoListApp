@@ -3,6 +3,13 @@
 <layout>
 
     <data>
+<!--        <variable-->
+<!--            name="vm"-->
+<!--            type="com.jscompany.tp16todolistapp.viewmodel.TodoViewModel" />-->
+
+        <variable
+            name="mainActivity"
+            type="com.jscompany.tp16todolistapp.view.MainActivity" />
 
     </data>
 
@@ -21,16 +28,30 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="?attr/actionBarSize">
+
+                <TextView
+                    android:text="TodoList"
+                    android:textSize="24sp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.Toolbar>
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
                 app:tabTextColor="@color/black"
+                app:tabIndicatorHeight="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
             android:layout_below="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
