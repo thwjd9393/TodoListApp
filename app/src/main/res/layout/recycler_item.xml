@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <variable
+            name="item"
+            type="com.jscompany.tp16todolistapp.model.TodoVO" />
 
+        <variable
+            name="vm"
+            type="com.jscompany.tp16todolistapp.viewmodel.TodoViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:cardElevation="5dp"
         app:strokeWidth="2dp"
         app:cardCornerRadius="3dp"
         android:layout_marginBottom="8dp"
-        android:padding="16dp"
-        tools:context=".view.ItemActivity">
+        android:padding="16dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,12 +27,13 @@
 
             <CheckBox
                 android:id="@+id/tv_title"
-                android:text="제목"
+                android:text="@{item.title}"
+                android:onCheckedChanged="@{() -> vm.setStatus()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="내용은 여기에 들어갈 겁니다내용은 여기에 들어갈 겁니다내용은 여기에 들어갈 겁니다내용은 여기에 들어갈 겁니다"
+                android:text="@{item.content}"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:layout_below="@+id/tv_title"
@@ -42,4 +45,3 @@
     </com.google.android.material.card.MaterialCardView>
 
 </layout>
-

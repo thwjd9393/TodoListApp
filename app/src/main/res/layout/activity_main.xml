@@ -7,10 +7,6 @@
 <!--            name="vm"-->
 <!--            type="com.jscompany.tp16todolistapp.viewmodel.TodoViewModel" />-->
 
-        <variable
-            name="mainActivity"
-            type="com.jscompany.tp16todolistapp.view.MainActivity" />
-
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
