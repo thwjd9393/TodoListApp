@@ -7,6 +7,7 @@ class G {
         val NOT_COMPLATE :Int = 0
         //완료
         val COMPLATE : Int = 1
+
     }
 
 }

@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
         tools:context=".view.WriteActivity">
 
         <androidx.appcompat.widget.Toolbar
@@ -30,45 +29,69 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <EditText
-            android:hint="제목입력"
-            android:lines="1"
-
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"/>
-
-        <EditText
-            android:hint="내용 입력"
-            android:layout_weight="1"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
         <LinearLayout
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:text="등록"
-                android:backgroundTint="#4CAF50"
-                android:layout_weight="8"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <EditText
+                android:hint="제목입력"
+                android:lines="1"
+                android:text="@{vm.title}"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:onTextChanged="@{vm::onTextChange}"/>
 
-            <Button
-                android:text="취소"
-                android:backgroundTint="#C61111"
+<!--   함수 호출은 . , 함수 지정 ::     -->
+
+            <EditText
+                android:hint="내용 입력"
+                android:padding="10dp"
                 android:layout_weight="1"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:text="@{vm.content}"
+                android:gravity="top"
+                android:maxLength="150"
+                android:layout_marginTop="10dp"
+                android:inputType="textMultiLine"
+                android:background="@drawable/edit_shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onTextChanged="@{(s,start, end, count)-> vm.onTextChange2(s,start, end, count)}"/>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_insert"
+                    android:text="등록"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_weight="8"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(v) -> vm.setData()}"/>
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:text="취소"
+                    android:backgroundTint="#C61111"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
